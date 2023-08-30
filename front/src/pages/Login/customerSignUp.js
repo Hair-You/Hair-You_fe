@@ -1,4 +1,4 @@
-import './signup.scss'
+import './signUp.scss'
 import Logo from '../../components/logo'
 
 function CustomerSignUp() {
@@ -6,7 +6,7 @@ function CustomerSignUp() {
         <div className="container">
             <Logo></Logo>
             <div className='main-container'>
-                <h1>customer singup</h1>
+                <h1>customer signup</h1>
                 <hr></hr>
                 <div className='sign'>
                     <form className='signForm'>
@@ -27,8 +27,7 @@ function CustomerSignUp() {
                                 <input type='text' placeholder='TEL'></input>
                             </li>
                         </ul>
-                        <button type='submit'>singup</button>
-
+                        <button type='submit'>signup</button>
                     </form>
                 </div>
             </div>

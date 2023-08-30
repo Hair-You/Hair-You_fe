@@ -1,5 +1,5 @@
 import Logo from "../../components/logo";
-import './signup.scss'
+import './signUp.scss'
 
 function DesignerSignUp() {
     return (
