@@ -37,3 +37,24 @@
     transform: rotate(360deg);
   }
 }
+
+//logo
+@mixin main-color {
+  background-color: #0B1F87;
+  color: white;
+}
+
+$main-color : #0B1F87;
+$input-color : #D9D9D9;
+
+.logo-container {
+  padding: 1px;
+  height: 20%;
+
+  .logo {
+    text-align: left;
+    margin-left: 100px;
+    margin-top: 50px;
+    color: $main-color;
+  }
+}
