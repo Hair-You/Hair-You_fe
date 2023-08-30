@@ -1,11 +1,26 @@
 import logo from './logo.svg';
-import './App.css';
+import './App.scss';
+import First from './pages/Index/first';
+import Login from './pages/Login/login';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+import { Route, Routes, Link } from 'react-router-dom';
+import DesignerSignUp from './pages/Login/designerSingup';
+import CustomerSignUp from './pages/Login/customerSignUp';
+import SignUp from './pages/Login/signUp';
 
 function App() {
   return (
     <div className="App">
-      test
-    </div>
+
+      <Routes>
+        <Route path='/' element={<First />}></Route>
+        <Route path='/login' element={<Login />}></Route>
+        <Route path='/csignup' element={<CustomerSignUp ></CustomerSignUp>}></Route>
+        <Route path='/dsignUp' element={<DesignerSignUp></DesignerSignUp>}></Route>
+        <Route path='/signup' element={<SignUp></SignUp>}></Route>
+      </Routes >
+    </div >
   );
 }
 
