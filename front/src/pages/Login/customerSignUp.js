@@ -1,7 +1,17 @@
 import './signUp.scss'
 import Logo from '../../components/logo'
+import { useState } from 'react';
 
 function CustomerSignUp() {
+
+    const [id, setId] = useState('')
+    const [password, setPassword] = useState('')
+    const [name, setName] = useState('')
+    const [sex, setSex] = useState('')
+    const [tel, setTel] = useState('')
+
+    console.log(id)
+
     return (
         <div className="container">
             <Logo></Logo>
@@ -12,10 +22,10 @@ function CustomerSignUp() {
                     <form className='signForm'>
                         <ul>
                             <li>
-                                <input type='text' placeholder='ID'></input>
+                                <input type='text' placeholder='ID' ></input>
                             </li>
                             <li>
-                                <input type='text' placeholder='PASSWORD'></input>
+                                <input type='password' placeholder='PASSWORD'></input>
                             </li>
                             <li>
                                 <input type='text' placeholder='NAME'></input>
@@ -24,7 +34,7 @@ function CustomerSignUp() {
                                 <input type='text' placeholder='SEX'></input>
                             </li>
                             <li>
-                                <input type='text' placeholder='TEL'></input>
+                                <input type='tel' placeholder='TEL'></input>
                             </li>
                         </ul>
                         <button type='submit'>signup</button>
