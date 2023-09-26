@@ -1,7 +1,10 @@
+import { useState } from "react";
 import Logo from "../../components/logo";
 import './signUp.scss'
 
 function DesignerSignUp() {
+    let [a] = useState(a)
+
     return (
         <div className="container">
             <Logo></Logo>
