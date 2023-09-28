@@ -3,7 +3,7 @@ import { ListGroup, Form, Button } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import Logo from '../../components/logo'
 import { useSelector, useDispatch } from 'react-redux';
-import { setLoginTab } from '../../store/store';
+import { setLoginTab } from '../../store/loginTab.js';
 
 function Login() {
 

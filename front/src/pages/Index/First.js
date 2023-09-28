@@ -1,7 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 import './first.scss'
 import { useDispatch, useSelector } from 'react-redux'
-import { setLoginTab } from '../../store/store';
+import { setLoginTab } from '../../store/loginTab.js';
 
 function First() {
     const navigate = useNavigate()
