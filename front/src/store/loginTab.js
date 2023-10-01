@@ -1,6 +1,5 @@
 import { configureStore, createSlice } from '@reduxjs/toolkit'
 
-//tablogin
 let loginTab = createSlice({
     name: 'loginTab',
     initialState: { name: 'customer' },

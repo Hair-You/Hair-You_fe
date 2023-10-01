@@ -8,6 +8,7 @@ function First() {
     const dispatch = useDispatch()
     let tab = useSelector((state) => state.loginTab)
 
+
     function loginClick(action) {
         dispatch(setLoginTab(action))
         navigate('/login')
@@ -24,6 +25,7 @@ function First() {
                 <button className='btn' onClick={() => loginClick('designer')}>designer login</button>
             </div>
             <h3 onClick={() => { navigate('/signup') }}>join us?</h3>
+            {console.log()}
         </div>
     )
 }
