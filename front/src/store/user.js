@@ -9,10 +9,10 @@ const user = createSlice({
     },
     reducers: {
         login: (state, action) => {
-            const [userId, userPasswd, userJob] = action.payload;
-            // state.userId = action.payload;
-            // state.userPasswd = action.payload
-            // state.userJob = action.payload
+            const { userId, userPasswd, userJob } = action.payload;
+            state.userId = userId;
+            state.userPasswd = userPasswd;
+            state.userJob = userJob;
         },
         logout: (state) => {
             state.auth = null;
