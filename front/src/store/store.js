@@ -1,12 +1,11 @@
 import { configureStore, createSlice } from '@reduxjs/toolkit'
 import loginTab from './loginTab'
-import auth from './auth'
+import user from './user'
 
 
 export default configureStore({
     reducer: {
         loginTab: loginTab.reducer,
-        auth: auth.reducer
+        user: user.reducer
     }
 })
-

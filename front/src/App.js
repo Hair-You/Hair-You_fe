@@ -5,7 +5,7 @@ import Login from './pages/Login/login';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import { Route, Routes, Link } from 'react-router-dom';
-import DesignerSignUp from './pages/Login/designerSingup';
+import DesignerSignUp from './pages/Login/designerSingUp';
 import CustomerSignUp from './pages/Login/customerSignUp';
 import SignUp from './pages/Login/signUp';
 

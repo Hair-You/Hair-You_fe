@@ -2,7 +2,7 @@ import './signUp.scss'
 import Logo from '../../components/logo'
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { login } from '../../store/auth';
+import { login } from '../../store/user';
 import { useNavigate } from 'react-router-dom';
 
 function CustomerSignUp() {
@@ -52,10 +52,7 @@ function CustomerSignUp() {
                                 <input type='text' name='username' placeholder='NAME' onChange={handleChange}></input>
                             </li>
                             <li>
-                                <select id="sex" name="sex" onChange={handleChange}>
-                                    <option value="male">남성</option>
-                                    <option value="female">여성</option>
-                                </select>
+
                             </li>
                             <li>
                                 <input type='tel' name='usertel' placeholder='TEL' onChange={handleChange}></input>
