@@ -1,6 +1,6 @@
 import './signUp.scss'
 import Logo from '../../components/logo'
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { login } from '../../store/user';
 import { useNavigate } from 'react-router-dom';
@@ -10,27 +10,50 @@ function CustomerSignUp() {
     const dispatch = useDispatch();
     const navigate = useNavigate();
     const [formData, setFormData] = useState({
-        userid: '',
-        userpasswd: '',
-        username: '',
-        usersex: '',
-        usertel: '',
-        select: 'customer'
+        id: '',
+        password: '',
+        name: '',
+        tel: '',
+        job: 'customer'
     });
 
+    const [validData, setValidData] = useState({
+        id: false,
+        password: false,
+        name: false,
+        tel: false
+    })
 
+
+    const ID_REGEX = /^[a-z]+[a-z0-9]{8,}$/g;
+    const PWD_REGEX = /^(?=.*[a-zA-Z])(?=.*[0-9])(?=.*[!@#$%]).{8,}$/;
+
+    //id 유효성 검사
+    useEffect(() => {
+        const result = ID_REGEX.test(formData.id)
+        setValidData({ ...validData, id: result })
+    }, [formData.id])
+
+    //password 유효성 검사
+    useEffect(() => {
+        const result = PWD_REGEX.test(formData.password);
+        setValidData({ ...validData, password: result });
+    }, [formData.password]);
+
+    //formData 값 넣기
     const handleChange = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
     };
 
+    //submit axios처리
     const handleRegister = (e) => {
         e.preventDefault();
         // 회원가입 로직 처리 (백엔드 서버와 통신 등)
 
         // 가입 후 로그인 처리 (임시: 사용자 정보를 Redux 스토어에 저장)
-        const user = { userid: formData.userid }; // 가입 후 사용자 정보
-        dispatch(login(user));
-        navigate('/')
+        //const user = {}; // 가입 후 사용자 정보
+        //dispatch(login(user)); 
+        navigate('/login')
     };
 
     return (
@@ -43,23 +66,21 @@ function CustomerSignUp() {
                     <form className='signForm'>
                         <ul>
                             <li>
-                                <input type='text' name="userid" placeholder='ID' onChange={handleChange} ></input>
+                                <input type='text' name="id" placeholder='ID' onChange={handleChange} ></input>
                             </li>
                             <li>
-                                <input type='password' name='userpasswd' placeholder='PASSWORD' onChange={handleChange}></input>
+                                <input type='password' name='password' placeholder='PASSWORD' onChange={handleChange}></input>
                             </li>
                             <li>
-                                <input type='text' name='username' placeholder='NAME' onChange={handleChange}></input>
+                                <input type='text' name='name' placeholder='NAME' onChange={handleChange} required></input>
                             </li>
                             <li>
-
-                            </li>
-                            <li>
-                                <input type='tel' name='usertel' placeholder='TEL' onChange={handleChange}></input>
+                                <input type='tel' name='tel' placeholder='TEL' onChange={handleChange} required></input>
                             </li>
                         </ul>
-                        <button type='submit' onClick={handleRegister}>signup</button>
+                        <button disabled={!validData.id || !validData.password ? true : false} type='submit' onClick={handleRegister}>signup</button>
                     </form>
+                    {console.log(validData.password)}
                 </div>
             </div>
         </div>
