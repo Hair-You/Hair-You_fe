@@ -8,6 +8,7 @@ import { Route, Routes, Link } from 'react-router-dom';
 import DesignerSignUp from './pages/Login/designerSingUp';
 import CustomerSignUp from './pages/Login/customerSignUp';
 import SignUp from './pages/Login/signUp';
+import CustomerMain from './pages/Main/customerMain';
 
 function App() {
   return (
@@ -19,6 +20,8 @@ function App() {
         <Route path='/csignup' element={<CustomerSignUp ></CustomerSignUp>}></Route>
         <Route path='/dsignup' element={<DesignerSignUp></DesignerSignUp>}></Route>
         <Route path='/signup' element={<SignUp></SignUp>}></Route>
+
+        <Route path='/cmain' element={<CustomerMain></CustomerMain>}></Route>
       </Routes >
     </div >
   );

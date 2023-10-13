@@ -48,10 +48,7 @@ function Login() {
                     <button type='submit' onClick={loginHandler}>Login</button>
                     <p onClick={() => { navigate('/signup') }}>JOIN US?</p>
                 </form>
-                {console.log(id)}
-                {console.log(passwd)}
                 {console.log(user)}
-
             </div>
         </div >
     )
