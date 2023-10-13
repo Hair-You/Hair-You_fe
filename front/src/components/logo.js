@@ -6,9 +6,9 @@ function Logo() {
     const navigate = useNavigate()
 
     return (
-        <div className='logo-container'>
+        <div className='logo-container' style={{ cursor: 'pointer' }} >
             <h1 className='logo' onClick={() => { navigate('/') }}>Hair You</h1>
-        </div>
+        </div >
     )
 }
 

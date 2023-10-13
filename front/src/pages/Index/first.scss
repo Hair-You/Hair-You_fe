@@ -5,7 +5,7 @@ div {
 }
 
 .container {
-    width: 100%;
+    width: 100vw;
     height: 100vh;
 
     .main-logo-container {
@@ -38,12 +38,15 @@ div {
         }
     }
 
-    .signup-container {
-        h3 {
-            text-align: right;
-            margin-right: 250px;
-            font-size: 24px;
-            margin-top: 0;
-        }
+    h3 {
+        text-align: right;
+        margin-right: 250px;
+        font-size: 24px;
+        margin-top: 0;
+    }
+
+    h3:hover {
+        cursor: pointer;
+        font-size: 28px;
     }
 }

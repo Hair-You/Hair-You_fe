@@ -1,7 +1,18 @@
+import { useState } from "react";
 import Logo from "../../components/logo";
-import './signup.scss'
+import './signUp.scss'
 
 function DesignerSignUp() {
+
+    let [id, setId] = useState('')
+    let [passwd, setPasswd] = useState('')
+    let [name, setName] = useState('')
+    let [nickname, setNickname] = useState('')
+    let [sex, setSex] = useState('')
+    let [career, setCareer] = useState('')
+    let [rank, setRank] = useState('')
+    let [profile, setProfile] = useState('')
+
     return (
         <div className="container">
             <Logo></Logo>
@@ -12,10 +23,10 @@ function DesignerSignUp() {
                     <form className='signForm'>
                         <ul>
                             <li>
-                                <input type='text' placeholder='ID'></input>
+                                <input type='id' placeholder='ID'></input>
                             </li>
                             <li>
-                                <input type='text' placeholder='PASSWORD'></input>
+                                <input type='password' placeholder='PASSWORD'></input>
                             </li>
                             <li>
                                 <input type='text' placeholder='NAME'></input>

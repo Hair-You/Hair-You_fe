@@ -28,6 +28,19 @@ $input-color : #D9D9D9;
                     border-radius: 10px;
                 }
 
+
+                input[type=radio] {
+                    height: 30px;
+                    width: 100px;
+
+                    #text {
+                        width: 100px;
+                    }
+                }
+
+
+
+
             }
         }
 
@@ -59,6 +72,8 @@ $input-color : #D9D9D9;
         }
 
     }
+
+
 }
 
 h1 {
@@ -69,5 +84,8 @@ hr {
     width: 1000px;
     margin: 0 auto;
     margin-top: 20px;
+}
 
+button {
+    text-transform: uppercase;
 }
