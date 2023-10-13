@@ -107,7 +107,6 @@ function CustomerSignUp() {
                         </ul>
                         <button disabled={(!validData.id || !validData.password || !validData.name || !validData.tel) ? true : false} type='submit' onClick={handleRegister}>signup</button>
                     </form>
-
                 </div>
             </div>
         </div>
