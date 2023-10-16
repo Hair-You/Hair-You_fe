@@ -12,12 +12,15 @@ div {
         height: 60%;
         padding: 1px;
 
+        position: relative;
+
         .main-logo {
+            float: left;
             color: $main-color;
-            text-align: left;
             font-size: 63px;
-            margin-left: 250px;
-            margin-top: 150px;
+            position: absolute;
+            left: 250px;
+            top: 150px;
         }
     }
 
