@@ -17,7 +17,7 @@ function First() {
     return (
         <div className="container">
             <div className='main-logo-container'>
-                <h1 className="main-logo">Hair You</h1>
+                <p className="main-logo">Hair You</p>
             </div>
 
             <div className='btn-container'>
@@ -25,7 +25,6 @@ function First() {
                 <button className='btn' onClick={() => loginClick('designer')}>designer login</button>
             </div>
             <h3 onClick={() => { navigate('/signup') }}>join us?</h3>
-            {console.log()}
         </div>
     )
 }

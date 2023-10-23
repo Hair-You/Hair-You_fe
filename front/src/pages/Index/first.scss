@@ -1,52 +1,60 @@
 $main-color : #0B1F87;
 
+html {
+    font-size: 16px;
+}
+
 div {
     box-sizing: border-box;
 }
 
-.container {
-    width: 100vw;
-    height: 100vh;
+@media (min-width: 1024px) {
+    .container {
+        width: 100vw;
+        height: 100vh;
 
-    .main-logo-container {
-        height: 60%;
-        padding: 1px;
+        .main-logo-container {
+            height: 60%;
+            padding: 1px;
+            position: relative;
 
-        .main-logo {
-            color: $main-color;
-            text-align: left;
-            font-size: 63px;
-            margin-left: 250px;
-            margin-top: 150px;
+            .main-logo {
+                float: left;
+                color: $main-color;
+                font-size: 4rem;
+                position: absolute;
+                left: 250px;
+                top: 150px;
+            }
         }
-    }
 
-    .btn-container {
-        height: 80px;
-        padding-left: 235px;
+        .btn-container {
+            height: 80px;
+            padding-left: 235px;
 
-        .btn {
-            border-radius: 20px;
-            background-color: $main-color;
-            color: white;
-            font-size: 18px;
-            text-transform: uppercase;
-            float: left;
-            margin: 10px;
-            width: 200px;
-            height: 66px;
+            .btn {
+                border-radius: 20px;
+                background-color: $main-color;
+                color: white;
+                font-size: 18px;
+                text-transform: uppercase;
+                float: left;
+                margin: 10px;
+                width: 200px;
+                height: 66px;
+            }
         }
-    }
 
-    h3 {
-        text-align: right;
-        margin-right: 250px;
-        font-size: 24px;
-        margin-top: 0;
-    }
+        h3 {
+            text-align: right;
+            margin-right: 250px;
+            font-size: 24px;
+            margin-top: 0;
+        }
 
-    h3:hover {
-        cursor: pointer;
-        font-size: 28px;
+        &:hover {
+            cursor: pointer;
+            font-size: 28px;
+        }
     }
 }
