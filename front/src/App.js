@@ -1,11 +1,11 @@
 import logo from './logo.svg';
 import './App.scss';
-import First from './pages/Index/first';
+import First from './pages/Index/First';
 import Login from './pages/Login/login';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import { Route, Routes, Link } from 'react-router-dom';
-import DesignerSignUp from './pages/Login/designerSingUp';
+import DesignerSignUp from './pages/Login/designerSignUp';
 import CustomerSignUp from './pages/Login/customerSignUp';
 import SignUp from './pages/Login/signUp';
 import CustomerMain from './pages/Main/customerMain';
