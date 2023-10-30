@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { login } from '../../store/user';
 import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 
 function CustomerSignUp() {
 
@@ -12,17 +13,17 @@ function CustomerSignUp() {
     const [formData, setFormData] = useState({
         id: '',
         password: '',
-        name: '',
-        tel: '',
+        username: '',
+        number: '',
         gender: 'MEN',
-        job: 'customer'
+        //job: 'customer'
     });
 
     const [validData, setValidData] = useState({
         id: false,
         password: false,
-        name: false,
-        tel: false
+        username: false,
+        number: false
     })
 
 
@@ -46,14 +47,14 @@ function CustomerSignUp() {
     //name 유효성 검사
     useEffect(() => {
         const result = NAME_REGEX.test(formData.name);
-        setValidData({ ...validData, name: result })
-    }, [formData.name])
+        setValidData({ ...validData, username: result })
+    }, [formData.username])
 
     //tel 유효성 검사
     useEffect(() => {
         const result = TEL_REGEX.test(formData.tel);
-        setValidData({ ...validData, tel: result })
-    }, [formData.tel])
+        setValidData({ ...validData, number: result })
+    }, [formData.number])
 
     //formData 값 넣기
     const handleChange = (e) => {
@@ -64,6 +65,17 @@ function CustomerSignUp() {
     const handleRegister = (e) => {
         e.preventDefault();
         // 회원가입 로직 처리 (백엔드 서버와 통신 등)
+        axios.post('http://localhost:8080/hair/user', formData)
+
+            .then(response => {
+                // 성공 시 처리
+                console.log(response.data);
+            })
+            .catch(error => {
+                // 오류 시 처리
+                console.error(error);
+            });
+
 
         // 가입 후 로그인 처리 (임시: 사용자 정보를 Redux 스토어에 저장)
         //const user = {}; // 가입 후 사용자 정보
@@ -88,10 +100,10 @@ function CustomerSignUp() {
                                 <input type='password' name='password' placeholder='PASSWORD' onChange={handleChange}></input>
                             </li>
                             <li>
-                                <input type='text' name='name' placeholder='NAME' onChange={handleChange} ></input>
+                                <input type='text' name='username' placeholder='NAME' onChange={handleChange} ></input>
                             </li>
                             <li>
-                                <input type='tel' name='tel' placeholder='TEL' onChange={handleChange} ></input>
+                                <input type='tel' name='number' placeholder='TEL' onChange={handleChange} ></input>
                             </li>
                             <li>
                                 <label>
@@ -105,7 +117,7 @@ function CustomerSignUp() {
                             </li>
 
                         </ul>
-                        <button disabled={(!validData.id || !validData.password || !validData.name || !validData.tel) ? true : false} type='submit' onClick={handleRegister}>signup</button>
+                        <button /*disabled={(!validData.id || !validData.password || !validData.username || !validData.number) ? true : false} */ type='submit' onClick={handleRegister}> signup</button>
                     </form>
                 </div>
             </div>
