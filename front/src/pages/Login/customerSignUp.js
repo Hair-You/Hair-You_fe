@@ -65,7 +65,7 @@ function CustomerSignUp() {
     const handleRegister = (e) => {
         e.preventDefault();
         // 회원가입 로직 처리 (백엔드 서버와 통신 등)
-        axios.post('http://localhost:8080/hair/user', formData)
+        axios.post('/hair/user', formData)
 
             .then(response => {
                 // 성공 시 처리
