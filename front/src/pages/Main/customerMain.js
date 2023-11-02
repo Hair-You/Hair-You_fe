@@ -1,6 +1,5 @@
 import { useNavigate } from "react-router-dom";
 
-import { Calendar } from '@fullcalendar/core';
 import listPlugin from '@fullcalendar/list';
 import FullCalendar from '@fullcalendar/react'
 import dayGridPlugin from '@fullcalendar/daygrid'
