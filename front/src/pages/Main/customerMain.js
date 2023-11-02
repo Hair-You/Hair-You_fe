@@ -22,7 +22,7 @@ function CustomerMain() {
 
                     plugins={[dayGridPlugin, interactionPlugin, timeGridPlugin, listPlugin]} //플러그인 설치
                     initialView="dayGridMonth" //처음 보여주는 뷰
-                    weekends={true} //주말 포함 여부
+                    weekends={true} //주말 포함 여부d
                     height={'600px'}
                     headerToolbar={
                         {
