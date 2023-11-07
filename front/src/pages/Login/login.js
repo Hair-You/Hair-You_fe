@@ -6,6 +6,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { setLoginTab } from '../../store/loginTab.js';
 import { login, logout } from '../../store/user.js';
 import { useState } from 'react';
+import NaverLogin from '../../components/naverLogin.js';
 
 function Login() {
 
@@ -48,7 +49,9 @@ function Login() {
                     <button type='submit' onClick={loginHandler}>Login</button>
                     <p onClick={() => { navigate('/signup') }}>JOIN US?</p>
                 </form>
+
                 {console.log(user)}
+                <NaverLogin></NaverLogin>
             </div>
         </div >
     )
