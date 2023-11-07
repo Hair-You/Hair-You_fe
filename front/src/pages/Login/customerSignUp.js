@@ -16,7 +16,7 @@ function CustomerSignUp() {
         password: '',
         username: '',
         number: '',
-        gender: 'MEN',
+        gender: 'MALE',
         //job: 'customer'
     });
 

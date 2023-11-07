@@ -50,8 +50,9 @@ function Login() {
                     <p onClick={() => { navigate('/signup') }}>JOIN US?</p>
                 </form>
 
-                {console.log(user)}
                 <NaverLogin></NaverLogin>
+
+
             </div>
         </div >
     )
