@@ -18,14 +18,6 @@ function CustomerMain() {
     //     //navigate('/login')
     // }
     // //dateStr : 날짜 출력 "yyyy-mm-dd"
-    const naverLogout = () => {
-
-
-        localStorage.removeItem("com.naver.nid.oauth.state_token");
-
-        navigate('/');
-        window.location.reload();
-    };
 
     return (
         <>
@@ -74,7 +66,7 @@ function CustomerMain() {
 
                 />
             </div>  */}
-            <button onClick={naverLogout}>로그아웃</button>
+
         </>
     )
 }

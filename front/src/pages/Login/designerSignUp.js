@@ -67,7 +67,7 @@ function DesignerSignUp() {
         // 회원가입 로직 처리 (백엔드 서버와 통신 등)
         axios.post('/hair/designer', formData)
             .then(response => { console.log(formData) })
-            .catch(error => console.log(error))
+            .catch(error => { console.log(error) })
 
         // 가입 후 로그인 처리 (임시: 사용자 정보를 Redux 스토어에 저장)
         //const user = {}; // 가입 후 사용자 정보

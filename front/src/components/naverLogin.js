@@ -1,11 +1,14 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 
 function NaverLogin({ setGetToken, setUserInfo }) {
 
-    const user = useSelector((state) => state.user)
+    // const user = useSelector((state) => state.user)
     const [token, setToken] = useState('')
+
+    const navigate = useNavigate();
 
     const { naver } = window //window 객체에서 naver 속성 추출
     const NAVER_CLIENT_ID = "H97rPtdSaHjGM4z0KtwM" // cilent_id
@@ -14,7 +17,7 @@ function NaverLogin({ setGetToken, setUserInfo }) {
 
     const initializeNaverLogin = () => {
 
-        //네이버 로그인 인스턴스 생성
+        //네이버 로그인 인스턴스 생성ㄴ
         //LoginWithNaverId : 네이버 아이디로 로그인을 처리하기 위한 JavaScript Api
         const naverLogin = new naver.LoginWithNaverId({
 
@@ -89,9 +92,9 @@ function NaverLogin({ setGetToken, setUserInfo }) {
 
     const naverLogout = () => {
 
-        axios.delete('https://nid.naver.com/oauth2.0/token?grant_type=delete&client_id=' + NAVER_CLIENT_ID + '&client_secret=' + NAVER_SECRET_ID + '&access_token=' + token + '&service_provider=NAVER')
-            .then(response => { console.log('성공') })
-            .catch(error => { console.log(error) })
+        axios.delete('https://nid.naver.com/oauth2.0/token?grant_type=delete&client_id=' + NAVER_CLIENT_ID + '&client_secret=' + NAVER_SECRET_ID + '&access_token=' + token + '&service_provider=NAVER').then(response => console.log('성공'))
+            .catch(error => console.log(error))
+
 
     };
     console.log(token)
