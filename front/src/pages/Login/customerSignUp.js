@@ -65,7 +65,7 @@ function CustomerSignUp() {
     const handleRegister = (e) => {
         e.preventDefault();
         // 회원가입 로직 처리 (백엔드 서버와 통신 등)
-        axios.post('/hair/user', formData, config)
+        axios.post('/api/auth/user/sign-up', formData, config)
             .then(response => {
                 // 성공 시 처리
                 console.log(response.data);
