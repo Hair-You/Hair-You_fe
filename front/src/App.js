@@ -2,15 +2,20 @@ import logo from './logo.svg';
 import './App.scss';
 import First from './pages/Index/First';
 import Login from './pages/Login/login';
+import Logo from './components/logo'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import { Route, Routes, Link } from 'react-router-dom';
+import { useDispatch, useSelector } from "react-redux";
 import DesignerSignUp from './pages/Login/designerSignUp';
 import CustomerSignUp from './pages/Login/customerSignUp';
 import SignUp from './pages/Login/signUp';
 import CustomerMain from './pages/Main/customerMain';
 
 function App() {
+
+  const user = useSelector((state) => state.user)
+
   return (
     <div className="App">
 
@@ -22,6 +27,8 @@ function App() {
         <Route path='/signup' element={<SignUp></SignUp>}></Route>
         <Route path='/cmain' element={<CustomerMain></CustomerMain>}></Route>
       </Routes >
+
+
     </div >
   );
 }

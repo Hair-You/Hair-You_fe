@@ -3,19 +3,22 @@ import { configureStore, createSlice } from '@reduxjs/toolkit'
 const user = createSlice({
     name: 'user',
     initialState: {
-        userId: '',
-        userPasswd: '',
-        userJob: ''
+        id: '',
+        password: '',
+        job: '',
+        isLogin: null
     },
     reducers: {
         login: (state, action) => {
-            const { userId, userPasswd, userJob } = action.payload;
-            state.userId = userId;
-            state.userPasswd = userPasswd;
-            state.userJob = userJob;
+            const { id, password, job } = action.payload;
+            state.id = id;
+            state.password = password;
+            state.job = job;
+            state.isLogin = true;
         },
+
         logout: (state) => {
-            state.auth = null;
+            state.isLogin = false;
         },
     },
 });

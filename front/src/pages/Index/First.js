@@ -3,6 +3,8 @@ import './first.scss'
 import { useDispatch, useSelector } from 'react-redux'
 import { setLoginTab } from '../../store/loginTab.js';
 
+import Logo from '../../components/logo.js';
+
 function First() {
     const navigate = useNavigate()
     const dispatch = useDispatch()
@@ -15,17 +17,18 @@ function First() {
     }
 
     return (
-        <div className="container">
-            <div className='main-logo-container'>
-                <p className="main-logo">Hair You</p>
-            </div>
+        <>
+            <div className="container">
+                <Logo></Logo>
 
-            <div className='btn-container'>
-                <button className='btn' onClick={() => loginClick('customer')}>customer login</button>
-                <button className='btn' onClick={() => loginClick('designer')}>designer login</button>
+
+                <div className='btn-container'>
+                    <button className='btn' onClick={() => loginClick('customer')}>customer login</button>
+                    <button className='btn' onClick={() => loginClick('designer')}>designer login</button>
+                </div>
+                <h3 onClick={() => { navigate('/signup') }}>join us?</h3>
             </div>
-            <h3 onClick={() => { navigate('/signup') }}>join us?</h3>
-        </div>
+        </>
     )
 }
 

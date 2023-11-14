@@ -5,13 +5,15 @@ import Logo from '../../components/logo'
 import { useSelector, useDispatch } from 'react-redux';
 import { setLoginTab } from '../../store/loginTab.js';
 import { login, logout } from '../../store/user.js';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import axios from 'axios';
 
 function Login() {
 
     const [id, setId] = useState('')
     const [password, setPassword] = useState('')
     const tab = useSelector((state) => state.loginTab) //디자이너, 손님 정보 저장
+    const config = { "Content-Type": 'application/json' }; //json 형태로
     const user = useSelector((state) => state.user) //로그인한 유저 정보 저장
     const navigate = useNavigate()
     const dispatch = useDispatch()
@@ -20,51 +22,48 @@ function Login() {
     const loginHandler = (e) => {
         e.preventDefault();
 
-        //axios.post
+        axios.post('/api/auth/user/login', { id, password }, config)
+            .then(response => {
 
-        dispatch(login({
-            userId: id,
-            userPasswd: password,
-            userJob: tab.name
-        }));
+                console.log(response.data)
+
+                dispatch(login({
+                    id: id,
+                    password: password,
+                    job: tab.name
+                }));
+
+                navigate('/cmain')
+            }).catch(error => {
+                console.log(error)
+            })
     }
-    const [formData, setFormData] = useState({
-        id: '',
-        password: '',
-        job: tab.name
-    })
-
-    //formData 값 넣기
-    const handleChange = (e) => {
-        setFormData({ ...formData, [e.target.name]: e.target.value, job: tab.name });
-    };
 
     return (
         <div className="container">
             <Logo />
             <div className='main-container'>
                 <ListGroup horizontal>
-                    <ListGroup.Item className={tab.name === 'customer' ? 'active' : ''} onClick={() => { dispatch(setLoginTab('customer')) }} onChange={handleChange}>customer</ListGroup.Item>
-                    <ListGroup.Item className={tab.name === 'designer' ? 'active' : ''} onClick={() => { dispatch(setLoginTab('designer')) }} onChange={handleChange}>designer</ListGroup.Item>
+                    <ListGroup.Item className={tab.name === 'customer' ? 'active' : ''} onClick={() => { dispatch(setLoginTab('customer')) }} >customer</ListGroup.Item>
+                    <ListGroup.Item className={tab.name === 'designer' ? 'active' : ''} onClick={() => { dispatch(setLoginTab('designer')) }} >designer</ListGroup.Item>
                 </ListGroup>
 
 
                 <form className='login-form'>
                     <ul>
                         <li>
-                            <input type='id' name='id' placeholder='ID' onChange={handleChange}></input>
+                            <input type='id' name='id' placeholder='ID' onChange={(e) => setId(e.target.value)}></input>
                         </li>
                         <li>
-                            <input type='password' name='password' placeholder='PASSWORD' onChange={handleChange}></input>
+                            <input type='password' name='password' placeholder='PASSWORD' onChange={(e) => setPassword(e.target.value)}></input>
                         </li>
                     </ul>
                     <button type='submit' onClick={loginHandler}>Login</button>
                     <p onClick={() => { navigate('/signup') }}>JOIN US?</p>
                 </form>
 
-                {/*<NaverLogin></NaverLogin>*/}
+                {console.log(user)}
 
-                {console.log(formData)}
             </div>
         </div >
     )
