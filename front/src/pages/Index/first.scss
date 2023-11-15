@@ -12,20 +12,28 @@ div {
 .container {
     width: 100vw;
     height: 100vh;
+}
 
-    .btn-container {
-        margin-top: 400px;
-    }
+.btn-container {
+    margin-top: 400px;
 
-
-    .btn {
+    .login-btn {
         border-radius: 20px;
         background-color: $main-color;
         color: white;
-        font-size: 18px;
+        font-size: 15px;
+        width: 171px;
         text-transform: uppercase;
         margin: 10px;
-        width: 200px;
-        height: 66px;
+        height: 51px;
+    }
+}
+
+.register-btn {
+    font-size: 15px;
+
+    &:hover {
+        font-size: 18px;
+        cursor: pointer;
     }
 }

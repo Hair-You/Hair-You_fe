@@ -21,12 +21,11 @@ function First() {
             <div className="container">
                 <Logo></Logo>
 
-
                 <div className='btn-container'>
-                    <button className='btn' onClick={() => loginClick('customer')}>customer login</button>
-                    <button className='btn' onClick={() => loginClick('designer')}>designer login</button>
+                    <button className='login-btn' onClick={() => loginClick('customer')}>일반 회원 로그인</button>
+                    <button className='login-btn' onClick={() => loginClick('designer')}>디자이너 회원 로그인</button>
                 </div>
-                <h3 onClick={() => { navigate('/signup') }}>join us?</h3>
+                <h3 className='register-btn' onClick={() => { navigate('/signup') }}>join us?</h3>
             </div>
         </>
     )
