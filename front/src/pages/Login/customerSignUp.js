@@ -117,10 +117,10 @@ function CustomerSignUp() {
         <div className="container">
             <Logo></Logo>
             <div className='main-container'>
-                <h1>customer signup</h1>
-                <hr></hr>
                 <div className='sign'>
                     <form className='signForm'>
+                        <h3 className='signup-text'>회원가입</h3>
+                        <hr></hr>
                         <ul>
                             <li>
                                 <input type='text' name="id" placeholder='ID' onChange={handleChange} ></input>

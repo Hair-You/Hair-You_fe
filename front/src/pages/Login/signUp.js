@@ -9,15 +9,14 @@ function SignUp() {
     return (
         <div className="container">
             <Logo></Logo>
-            <h1>welcome, hair you!</h1>
             <div className="sign-container">
                 <div>
                     <p><img src="img/logo192.png"></img></p>
-                    <button onClick={() => { navigate('/csignup') }}>customer signup</button>
+                    <button className="signUp-btn" onClick={() => { navigate('/csignup') }}>일반 회원 회원가입</button>
                 </div>
                 <div>
                     <p><img src="img/logo192.png"></img></p>
-                    <button onClick={() => { navigate('/dsignup') }}>designer signup</button>
+                    <button className="signUp-btn" onClick={() => { navigate('/dsignup') }}>디자이너 회원가입</button>
                 </div>
             </div>
         </div>
