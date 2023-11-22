@@ -7,7 +7,8 @@ function Logo() {
 
     return (
         <div className='logo-container' style={{ cursor: 'pointer' }} >
-            <h1 className='logo' onClick={() => { navigate('/') }}>Hair You</h1>
+            <h1 className='logo' >Hair You</h1>
+            
         </div >
     )
 }
