@@ -5,20 +5,17 @@ import axios from 'axios';
 import Logo from '../../components/logo'
 import './main.scss'
 import { useEffect, useState } from "react";
+import shopData from "./data";
 
 function CustomerMain() {
 
-    // const user = useSelector((state) => state.user)
-    // const dispatch = useDispatch();
 
-    // const logout = () => {
-    //     dispatch(logout());
-    // }
     const [location, setLocation] = useState({
         latitude: '',//위도
         longitude: ''//경도
     })
-    const [address, setAddress] = useState('')
+    const [address, setAddress] = useState('서울시 마포구')
+    const [formData, setFormData] = useState(shopData)
 
 
     useEffect(() => {
@@ -44,6 +41,12 @@ function CustomerMain() {
             .catch((error) => { console.log(error) })
     }, [location]); // 효과는 'location' 상태에 의존합니다.
 
+    // useEffect(() => {
+    //     axios.post('')
+    //         .then()
+    //         .catch()
+    // }, [address])
+    //주소 서버로 보내기 ex) 시흥시 정왕동 보냄
 
     return (
         <>
@@ -53,7 +56,12 @@ function CustomerMain() {
                     <Dropdown.Toggle variant="success" id="dropdown-basic">
                         {address}
                     </Dropdown.Toggle>
-
+                    <div className="shop-container">
+                        {formData[0].shop_name}
+                        {formData[0].img}
+                        {formData[0].runtime}
+                        {formData[0].tel}
+                    </div>
                     {/* <Dropdown.Menu>
                         <Dropdown.Item href="#/action-1">경기도 파주시</Dropdown.Item>
                         <Dropdown.Item href="#/action-2">서울시 마포구</Dropdown.Item>
